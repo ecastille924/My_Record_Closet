@@ -4,7 +4,7 @@ import RecordsContainer from './RecordsContainer'
 const App = () => {
     return(
         <div>
-            Anybody There?
+            <RecordsContainer/>
         </div>
     )
 }
