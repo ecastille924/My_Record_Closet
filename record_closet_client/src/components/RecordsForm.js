@@ -44,25 +44,32 @@ handleRecordSubmit = (e) =>{
                 <input type="text" value={this.state.artist} onChange={this.handleInput} name='artist'/>
                 <br/>
 
-                <label>Condition:</label>
+                {/* <label>Condition:</label>
                 <input type="text" value={this.state.condition} onChange={this.handleInput} name='condition'/>
+                <br/> */}
+
+                <label>Condition:</label>
+                <select name='condition' value={this.state.condition} onChange={this.handleInput}>
+                    <option value= "">  </option>
+                    <option value="poor"> poor </option>
+                    <option value="fair"> fair </option>
+                    <option value="good"> good </option>
+                    <option value="mint"> mint </option>
+                </select>
                 <br/>
 
                 <label>Year:</label>
                 <input type="text" value={this.state.year} onChange={this.handleInput} name='year'/>
                 <br/>
 
-                {/* <label>Rating:</label>
-                <input type="text" value={this.state.rating} onChange={this.handleInput} name='rating'/>
-                <br/> */}
                 <label>Rating:</label>
-                <select name='rating' onChange={this.handleInput}>
-                    <option value={this.state.rating}>  </option>
-                    <option value={this.state.rating}> 1 </option>
-                    <option value={this.state.rating}> 2 </option>
-                    <option value={this.state.rating}> 3 </option>
-                    <option value={this.state.rating}> 4 </option>
-                    <option value={this.state.rating}> 5 </option>
+                <select name='rating' value={this.state.rating} onChange={this.handleInput}>
+                    <option value= "">  </option>
+                    <option value="1"> 1 </option>
+                    <option value="2"> 2 </option>
+                    <option value="3"> 3 </option>
+                    <option value="4"> 4 </option>
+                    <option value="5"> 5 </option>
                 </select>
                 <br/>
 
