@@ -22,7 +22,7 @@ function RecordsList({ records }){
 }
 
 const mapStateToProps = state => {
-    return { records: state.records}
+    return { records: state.records }
 }
 
 export default connect(mapStateToProps)(RecordsList)

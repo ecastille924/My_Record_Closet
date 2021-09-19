@@ -12,7 +12,7 @@ class RecordsContainer extends Component {
 
     render() {
         return (
-            <div id="wrapper">
+            <div>
                 <RecordsForm />
             </div>
         )
