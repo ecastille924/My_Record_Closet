@@ -24,6 +24,13 @@ handleInput = (e) => {
 handleRecordSubmit = (e) =>{
     e.preventDefault()
     this.props.postRecord(this.state)
+    this.setState({
+        title:"",
+        artist:"",
+        condition:"",
+        year:"",
+        rating:""
+    })
 }
 
     render() {
