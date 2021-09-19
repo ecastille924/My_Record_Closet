@@ -15,8 +15,8 @@ class RecordsController < ApplicationController
 
   # POST /records
   def create
+    image = Cloudinary::Uploader.upload(params[:image])
     @record = Record.new(record_params)
-
     if @record.save
       render json: @record, status: :created, location: @record
     else
@@ -46,6 +46,6 @@ class RecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def record_params
-      params.require(:record).permit(:title, :artist, :condition, :year, :rating)
+      params.require(:record).permit(:title, :artist, :condition, :year, :rating, :image)
     end
 end

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_16_231724) do
     t.string "condition"
     t.integer "year"
     t.integer "rating"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

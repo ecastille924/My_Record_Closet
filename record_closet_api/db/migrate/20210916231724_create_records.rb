@@ -6,6 +6,7 @@ class CreateRecords < ActiveRecord::Migration[6.1]
       t.string :condition
       t.integer :year
       t.integer :rating
+      t.string :image
 
       t.timestamps
     end
