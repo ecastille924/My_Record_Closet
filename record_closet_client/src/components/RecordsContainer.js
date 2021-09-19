@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
 import{fetchRecords} from '../actions/RecordsActions'
-import RecordsFrom from './RecordsFrom'
+import RecordsForm from './RecordsForm'
 
 class RecordsContainer extends Component {
 
@@ -13,7 +13,7 @@ class RecordsContainer extends Component {
     render() {
         return (
             <div id="wrapper">
-                <RecordsFrom />
+                <RecordsForm />
             </div>
         )
     }

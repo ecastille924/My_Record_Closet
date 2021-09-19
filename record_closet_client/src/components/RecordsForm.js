@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-class RecordsFrom extends Component {
+import { postRecord } from '../actions/RecordsActions'
+
+class RecordsForm extends Component {
 
 state= {
     title:"",
@@ -18,9 +21,14 @@ handleInput = (e) => {
     })
 }
 
+handleRecordSubmit = (e) =>{
+    e.preventDefault()
+    this.props.postRecord(this.state)
+}
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleRecordSubmit}>
                 <label>Title:</label>
                 <input type="text" value={this.state.title} onChange={this.handleInput} name='title'/>
                 <br/>
@@ -48,4 +56,4 @@ handleInput = (e) => {
     }
 }
 
-export default RecordsFrom
+export default connect(null, {postRecord})(RecordsForm)
