@@ -52,8 +52,18 @@ handleRecordSubmit = (e) =>{
                 <input type="text" value={this.state.year} onChange={this.handleInput} name='year'/>
                 <br/>
 
-                <label>Rating:</label>
+                {/* <label>Rating:</label>
                 <input type="text" value={this.state.rating} onChange={this.handleInput} name='rating'/>
+                <br/> */}
+                <label>Rating:</label>
+                <select name='rating' onChange={this.handleInput}>
+                    <option value={this.state.rating}>  </option>
+                    <option value={this.state.rating}> 1 </option>
+                    <option value={this.state.rating}> 2 </option>
+                    <option value={this.state.rating}> 3 </option>
+                    <option value={this.state.rating}> 4 </option>
+                    <option value={this.state.rating}> 5 </option>
+                </select>
                 <br/>
 
                 <input type='submit' value='Submit Record'/>
