@@ -36,6 +36,7 @@ handleRecordSubmit = (e) =>{
     render() {
         return (
             <form onSubmit={this.handleRecordSubmit}>
+                <h2>Add a new record:</h2>
                 <label>Title:</label>
                 <input type="text" value={this.state.title} onChange={this.handleInput} name='title'/>
                 <br/>
@@ -44,25 +45,24 @@ handleRecordSubmit = (e) =>{
                 <input type="text" value={this.state.artist} onChange={this.handleInput} name='artist'/>
                 <br/>
 
-                {/* <label>Condition:</label>
-                <input type="text" value={this.state.condition} onChange={this.handleInput} name='condition'/>
-                <br/> */}
-
-                <label>Condition:</label>
-                <select name='condition' value={this.state.condition} onChange={this.handleInput}>
-                    <option value= "">  </option>
-                    <option value="poor"> poor </option>
-                    <option value="fair"> fair </option>
-                    <option value="good"> good </option>
-                    <option value="mint"> mint </option>
-                </select>
-                <br/>
-
                 <label>Year:</label>
                 <input type="text" value={this.state.year} onChange={this.handleInput} name='year'/>
                 <br/>
 
-                <label>Rating:</label>
+                <label>Condition:</label>
+                <select name='condition' value={this.state.condition} onChange={this.handleInput}>
+                    <option value= "">  </option>
+                    <option value="Poor to Fair"> Poor (P) to Fair (F) </option>
+                    <option value="Good"> Good (G) </option>
+                    <option value="Very Good"> Very Good (VG) </option>
+                    <option value="Very Good Plus"> Very Good Plus (VG+) </option>
+                    <option value="Excellent"> Excellent (E) </option>
+                    <option value="Near Mint"> Near Mint (NM) </option>
+                    <option value="Mint"> Mint (M) </option>
+                </select>
+                <br/>
+
+                <label>Star Rating:</label>
                 <select name='rating' value={this.state.rating} onChange={this.handleInput}>
                     <option value= "">  </option>
                     <option value="1"> 1 </option>
