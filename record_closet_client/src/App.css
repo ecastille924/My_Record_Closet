@@ -2,7 +2,53 @@
     text-align: center;
 }
 
+.divider {
+    width: 100%;
+    border: none;
+    height: 2px;
+    margin-top: 2px;
+    background-color: black;
+}
+
+.header-icon {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+.navbar-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
 .new-rec-form {
     padding: 20px;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
+.header {
+    margin-top: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.header-navbar{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+.png {
+    border-radius: 8px;
+    width: 20%;
+}
+
