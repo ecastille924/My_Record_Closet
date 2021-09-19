@@ -13,6 +13,14 @@
     background-color:saddlebrown;
 }
 
+.form-inputs{
+
+}
+
+.default-condition{
+    text-decoration: slategray;
+}
+
 .navbar {
     display: flex;
     flex-direction: row-reverse;

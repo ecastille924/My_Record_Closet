@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import '../App.css'
 import { postRecord } from '../actions/RecordsActions'
 
 class RecordsForm extends Component {
@@ -15,7 +15,6 @@ state= {
 
 handleInput = (e) => {
     const {name, value} = e.target
-
     this.setState({
         [name]: value
     })
@@ -37,21 +36,17 @@ handleRecordSubmit = (e) =>{
         return (
             <form onSubmit={this.handleRecordSubmit} className= 'new-rec-form'>
                 <h2>Add a new record:</h2>
-                <label>Title:</label>
-                <input type="text" value={this.state.title} onChange={this.handleInput} name='title'/>
+                <input type="text" value={this.state.title} onChange={this.handleInput} name='title' className="form-inputs" placeholder="Title:"/>
                 <br/>
 
-                <label>Artist:</label>
-                <input type="text" value={this.state.artist} onChange={this.handleInput} name='artist'/>
+                <input type="text" value={this.state.artist} onChange={this.handleInput} name='artist' className="form-inputs" placeholder="Artist:"/>
                 <br/>
 
-                <label>Year:</label>
-                <input type="text" value={this.state.year} onChange={this.handleInput} name='year'/>
+                <input type="text" value={this.state.year} onChange={this.handleInput} name='year' className="form-inputs" placeholder="Year:"/>
                 <br/>
 
-                <label>Condition:</label>
-                <select name='condition' value={this.state.condition} onChange={this.handleInput}>
-                    <option value= "">  </option>
+                <select name='condition' value={this.state.condition} onChange={this.handleInput} className="form-inputs" >
+                    <option value= "" disabled selected className="default-condition">Condition:</option>
                     <option value="Poor to Fair"> Poor (P) to Fair (F) </option>
                     <option value="Good"> Good (G) </option>
                     <option value="Very Good"> Very Good (VG) </option>
@@ -62,9 +57,9 @@ handleRecordSubmit = (e) =>{
                 </select>
                 <br/>
 
-                <label>Star Rating:</label>
-                <select name='rating' value={this.state.rating} onChange={this.handleInput}>
-                    <option value= "">  </option>
+                
+                <select name='rating' value={this.state.rating} onChange={this.handleInput} className="form-inputs">
+                    <option value= "" disabled selected>Star Rating:</option>
                     <option value="1"> 1 </option>
                     <option value="2"> 2 </option>
                     <option value="3"> 3 </option>
