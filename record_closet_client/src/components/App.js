@@ -1,11 +1,11 @@
 import React from "react"
-import RecordsContainer from './RecordsContainer'
 import '../App.css'
+import Router from "./Router"
 
 const App = () => {
     return(
-        <div id="wrapper">
-            <RecordsContainer/>
+        <div className="wrapper">
+            <Router />
         </div>
     )
 }

@@ -35,7 +35,7 @@ handleRecordSubmit = (e) =>{
 
     render() {
         return (
-            <form onSubmit={this.handleRecordSubmit}>
+            <form onSubmit={this.handleRecordSubmit} className= 'new-rec-form'>
                 <h2>Add a new record:</h2>
                 <label>Title:</label>
                 <input type="text" value={this.state.title} onChange={this.handleInput} name='title'/>
