@@ -31,7 +31,10 @@ state= {
 
                 <label>Rating:</label>
                 <input type="text" value={this.state.rating} onChange={this.handleInput} name='rating'/>
+                <br/>
                 
+                <input type='submit' value='Submit Record'/>
+
             </form>
         )
     }
