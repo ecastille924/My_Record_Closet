@@ -46,7 +46,7 @@ handleRecordSubmit = (e) =>{
                 <br/>
 
                 <select name='condition' value={this.state.condition} onChange={this.handleInput} className="form-inputs" >
-                    <option value= "" disabled selected className="default-condition">Condition:</option>
+                    <option value= "" disabled className="default-condition">Condition:</option>
                     <option value="Poor to Fair"> Poor (P) to Fair (F) </option>
                     <option value="Good"> Good (G) </option>
                     <option value="Very Good"> Very Good (VG) </option>
@@ -59,7 +59,7 @@ handleRecordSubmit = (e) =>{
 
                 
                 <select name='rating' value={this.state.rating} onChange={this.handleInput} className="form-inputs">
-                    <option value= "" disabled selected>Star Rating:</option>
+                    <option value= "" disabled>Star Rating:</option>
                     <option value="1"> 1 </option>
                     <option value="2"> 2 </option>
                     <option value="3"> 3 </option>
@@ -67,7 +67,11 @@ handleRecordSubmit = (e) =>{
                     <option value="5"> 5 </option>
                 </select>
                 <br/>
-
+                <br/>
+                <label>Upload Cover Art:</label><br/>
+                <input type="file" id="img" name="img" accept="image/*"/>
+                <br/>
+                <br/>
                 <input type='submit' value='Submit Record'/>
 
             </form>
