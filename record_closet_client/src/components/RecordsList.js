@@ -1,21 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import App from './App'
 import RecordsContainer from './RecordsContainer'
+import '../App.css'
+
 
 function RecordsList({ records }){
-    
-    const listStyle = {
-        backgroundColor: "#ccddff",
-        padding: "10px",
-        fontFamily: "Gorgia"
-    }
 
-    
     return (
         
-        <div>
+        <div className= "records-list">
             <RecordsContainer />
-            {records.map(record => <li style={listStyle} key= {record.id} >{record.title} - {record.artist} - *{record.condition}*</li>)}
+            <h3>My Record Collection:</h3>
+            {records.map(record => <li key= {record.id} >{record.title} - {record.artist} - *{record.condition}*</li>)}
 
         </div>
     )

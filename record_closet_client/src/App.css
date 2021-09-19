@@ -1,5 +1,8 @@
 .app {
     text-align: center;
+    background-color: rgb(243, 206, 126);
+    outline: saddlebrown;
+    outline-style: solid;
 }
 
 .divider {
@@ -7,13 +10,7 @@
     border: none;
     height: 2px;
     margin-top: 2px;
-    background-color: black;
-}
-
-.header-icon {
-    display: flex;
-    justify-content: left;
-    align-items: left;
+    background-color:saddlebrown;
 }
 
 .navbar {
@@ -22,10 +19,11 @@
   }
 
 .navbar-link {
-    display: flex;
+    width: 50%;
+    margin-bottom: 12px;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
     text-transform: uppercase;
 }
 
@@ -47,8 +45,8 @@
     flex-direction: column;
   }
 
-.png {
-    border-radius: 8px;
-    width: 20%;
-}
+  .records-list{
+      padding: 15px;
+  }
+
 
