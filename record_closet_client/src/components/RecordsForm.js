@@ -10,11 +10,12 @@ state= {
     artist:"",
     condition:"",
     year:"",
-    rating:""
+    rating:"",
+    image: {}
 }
 
 handleInput = (e) => {
-    const {name, value} = e.target
+    const { name, value } = e.target
     this.setState({
         [name]: value
     })
@@ -28,7 +29,8 @@ handleRecordSubmit = (e) =>{
         artist:"",
         condition:"",
         year:"",
-        rating:""
+        rating:"",
+        image: ""
     })
 }
 
@@ -69,7 +71,7 @@ handleRecordSubmit = (e) =>{
                 <br/>
                 <br/>
                 <label>Upload Cover Art:</label><br/>
-                <input type="file" id="img" name="img" accept="image/*"/>
+                <input type="file" id="img" name="img" accept="image/*" onChange={this.handleInput}/>
                 <br/>
                 <br/>
                 <input type='submit' value='Submit Record'/>
