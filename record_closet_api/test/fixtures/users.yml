@@ -2,8 +2,14 @@
 
 one:
   username: MyString
-  password_digest: <%= BCrypt::Password.create('secret') %>
+  email: MyString
+  password_digest: MyString
+  uid: MyString
+  provider: MyString
 
 two:
   username: MyString
-  password_digest: <%= BCrypt::Password.create('secret') %>
+  email: MyString
+  password_digest: MyString
+  uid: MyString
+  provider: MyString
