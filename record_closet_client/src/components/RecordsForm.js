@@ -11,7 +11,7 @@ state= {
     condition:"",
     year:"",
     rating:"",
-    image: {}
+    // image: {}
 }
 
 handleInput = (e) => {
@@ -30,7 +30,7 @@ handleRecordSubmit = (e) =>{
         condition:"",
         year:"",
         rating:"",
-        image: ""
+        // image: ""
     })
 }
 
@@ -69,11 +69,11 @@ handleRecordSubmit = (e) =>{
                     <option value="5"> 5 </option>
                 </select>
                 <br/>
-                <br/>
+                {/* <br/>
                 <label>Upload Cover Art:</label><br/>
                 <input type="file" id="img" name="img" accept="image/*" onChange={this.handleInput}/>
                 <br/>
-                <br/>
+                <br/> */}
                 <input type='submit' value='Submit Record'/>
 
             </form>
