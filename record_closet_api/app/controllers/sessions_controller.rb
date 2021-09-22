@@ -20,6 +20,7 @@ def create
 end
 
 def destroy
+    #delete the cookie to logout the user
     cookies.encrypted[:current_user_id] = nil
 
     redirect_to root_path
