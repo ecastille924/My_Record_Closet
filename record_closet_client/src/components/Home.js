@@ -1,11 +1,11 @@
 import React from 'react'
 import "../App.css"
-import Login from "./Login.js"
+
 
 const Home = () => {
     return(
         <div>
-          <Login />
+          Log in here
         </div>
     )
 }

@@ -7,6 +7,11 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import App from './components/App'
 import {rootReducer} from './reducers/rootReducer'
 import {BrowserRouter as Router } from 'react-router-dom'
+import {Auth0Provider} from '@auth0/auth0-react'
+
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 const store = createStore(
     rootReducer, 
@@ -16,7 +21,12 @@ const store = createStore(
     ReactDOM.render(
         <Provider store={store}>
             <Router>
-                <App />
+                <Auth0Provider
+                    domain={domain}
+                    clientId={clientId}
+                    redirectUri={window.location.origin} >
+                    <App />
+                </Auth0Provider>    
             </Router>
         </Provider>,
         document.getElementById('root')
