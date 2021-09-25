@@ -2,7 +2,7 @@ import React from 'react'
 import "../App.css"
 
 
-const Home = () => {
+const Login = () => {
     return(
         <div>
           Log in here
@@ -10,4 +10,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Login

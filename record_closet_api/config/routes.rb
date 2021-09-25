@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
-  resources :records
-  resources :users
-
-  get "/login", to: redirect("/auth/google_oauth2")
-  get "/logout", to: "sessions#destroy"
-  get "/auth/google_oauth2/callback", to: "sessions#create"
-  get "auth/failure", to: redirect('/')
-  resource :session, only: [:create, :destroy]
-
+      resources :records
+      resources :users, only: [:create]
+      post '/login', to: 'auth#create'
+    
 end
+
+# fetch("http://localhost:3000/users", {
+#   method: "POST",
+#   headers: {
+#     "Content-Type": "application/json",
+#     Accept: "application/json",
+#   },
+#   body: JSON.stringify({
+#     user: {
+#       username: "crandall",
+#       password: "piestyle69",
+#     },
+#   }),
+# })
+#   .then((r) => r.json())
+#   .then(console.log);
