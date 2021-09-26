@@ -1,22 +1,11 @@
 Rails.application.routes.draw do
-      resources :records
-      resources :users, only: [:create, :show, :index]
-      post '/login', to: 'auth#create'
+      post '/login',    to: 'sessions#create'
+      post '/logout',   to: 'sessions#destroy'
+      get '/logged_in', to: 'sessions#is_logged_in?'  
     
+      resources :users, only: [:create, :show, :index] do 
+            resources :records, only: [:create, :show, :index]
+         end
+
 end
 
-# fetch("http://localhost:3000/users", {
-#   method: "POST",
-#   headers: {
-#     "Content-Type": "application/json",
-#     Accept: "application/json",
-#   },
-#   body: JSON.stringify({
-#     user: {
-#       username: "crandall",
-#       password: "piestyle69",
-#     },
-#   }),
-# })
-#   .then((r) => r.json())
-#   .then(console.log);
