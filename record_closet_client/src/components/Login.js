@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import "../App.css"
 import { connect } from 'react-redux'
-import { UsersActions } from '../actions/UsersActions'
+import { createUser } from '../actions/UsersActions'
 
 
 class Login extends Component {
   constructor(props){
     super(props)
 
-    this.props.logout()
+    // this.props.logout()
 
     this.state = {
       username: "",
@@ -39,11 +39,15 @@ class Login extends Component {
     const { username, password, submitted } = this.state
     return (
       <form className= "login-form" onSubmit= {this.handleSubmit}>
-
+        <input type="text" value={username} onChange={this.handleChange}/>
+      <br/>
+        <input type="password" value={password} onChange={this.handleChange}/>
+      <br/>
+      <input type="submit" value="Log In"/>
       </form>
     )
   
   }
 }
 
-export default Login
+export default connect(null, {createUser})(Login)
