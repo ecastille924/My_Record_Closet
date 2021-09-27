@@ -11,10 +11,7 @@ const RecordsList = ({ records }) => {
         <div className= "records-list">
             <RecordsContainer />
             <h3>My Record Collection:</h3>
-            {records.map(record => 
-                <ul key= {record.id}>
-                    <li>{record.title} - {record.artist} - *{record.condition}*</li>
-                </ul>)}
+            {records.map(record => <li key= {record.id} >{record.title} - {record.artist} - *{record.condition}*</li>)}
 
         </div>
     )
