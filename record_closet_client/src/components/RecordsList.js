@@ -4,14 +4,17 @@ import RecordsContainer from './RecordsContainer'
 import '../App.css'
 
 
-function RecordsList({ records }){
+const RecordsList = ({ records }) => {
 
     return (
         
         <div className= "records-list">
             <RecordsContainer />
             <h3>My Record Collection:</h3>
-            {records.map(record => <li key= {record.id} >{record.title} - {record.artist} - *{record.condition}*</li>)}
+            {records.map(record => 
+                <ul key= {record.id}>
+                    <li>{record.title} - {record.artist} - *{record.condition}*</li>
+                </ul>)}
 
         </div>
     )
