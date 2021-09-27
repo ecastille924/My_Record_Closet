@@ -1,23 +1,18 @@
 import React, { Component } from 'react'
 import "../App.css"
-import { connect } from 'react-redux'
-import { createUser } from '../actions/UsersActions'
+// import axios from 'axios'
+
 
 
 class Login extends Component {
   constructor(props){
     super(props)
 
-    // this.props.logout()
-
     this.state = {
       username: "",
       password:"",
-      submitted: false
+      errors: ""
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
   handleChange(e){
@@ -26,28 +21,25 @@ class Login extends Component {
   }
   handleSubmit(e){
     e.preventDefault()
-
-    this.setState({submitted: true})
-    const { username, password } = this.state
-    if (username && password) {
-      this.props.login(username, password)
-    }
   }
 
   render(){
-    const { loggedIn } = this.props
-    const { username, password, submitted } = this.state
+    const { username, password } = this.state
     return (
-      <form className= "login-form" onSubmit= {this.handleSubmit}>
-        <input type="text" value={username} onChange={this.handleChange}/>
-      <br/>
-        <input type="password" value={password} onChange={this.handleChange}/>
-      <br/>
-      <input type="submit" value="Log In"/>
-      </form>
-    )
-  
+      <div>
+        Log In:
+        <form className= "login-form" onSubmit= {this.handleSubmit}>
+          <input type="text" value={username} onChange={this.handleChange} placeholder="username"/>
+        <br/>
+          <input type="password" value={password} onChange={this.handleChange} placeholder="password"/>
+        <br/>
+        <input type="submit" value="Log In"/>
+        <br/>
+        </form>
+
+      </div>
+    );
   }
 }
 
-export default connect(null, {createUser})(Login)
+export default Login
