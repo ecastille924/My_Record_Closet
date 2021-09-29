@@ -29,6 +29,24 @@ class App extends Component {
     .then(user => this.setState({ user: user }))
   }
 
+  login = user => {
+    fetch('http://localhost:3000/login',{
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user:{
+          username: user.username,
+          password: user.password
+        }
+      })
+    })
+    .then(response => response.json())
+    .then(user => this.setState({ user: user }))
+  }
+
   render() {
       return (
         <div className="app">
@@ -36,8 +54,8 @@ class App extends Component {
 
             {this.state.user.username ? <RecordsContainer/> : (
                 <>
-                <Login/>
-                <Signup signUp = {this.signUp} /> 
+                <Login login={this.login} />
+                <Signup signUp={this.signUp} /> 
                 </>
             )
             }

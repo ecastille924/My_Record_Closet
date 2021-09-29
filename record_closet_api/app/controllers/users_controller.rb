@@ -10,6 +10,10 @@ def create
     render json: @user, status: :created
 end
 
+def login
+    @user = User.find_by(username: params[:user][:username])
+end
+
 private
       
      def user_params
