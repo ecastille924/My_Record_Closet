@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
       skip_before_action :verify_authenticity_token
+      before_action :is_authorized
 
       def is_authorized
             render json: {error: "You are not logged in"} unless is_logged_in
@@ -18,6 +19,11 @@ class ApplicationController < ActionController::Base
                   rescue JWT::DecodeError
                         nil
                   end
+            end
+            if(@user_id)
+                  @user = User.find(@user_id)
+            else
+                  nil
             end
       end
 end
