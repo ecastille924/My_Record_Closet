@@ -44,7 +44,14 @@ class App extends Component {
       })
     })
     .then(response => response.json())
-    .then(user => this.setState({ user: user }))
+    .then(result => {
+      if (result.token){
+        localStorage.setItem('token', result.token)
+        this.setState({
+          user: result.user
+        })
+      }
+    })
   }
 
   render() {
