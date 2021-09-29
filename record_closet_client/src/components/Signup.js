@@ -15,14 +15,18 @@ export default class Signup extends Component {
     })
   }
 
+  // handleSubmit = e => {
+
+  // }
+
   render(){
     return (
       <div>
         Sign Up:
         <form className= "signup-form">
-          <input name='username' type="text" value={this.state.username} onChange={this.handleChange} placeholder="username"/>
+          <input name='username' type="text" value={this.state.username} onChange={this.handleChange} onSubmit={this.handleSubmit} placeholder="username"/>
         <br/>
-          <input name='password' type="password" value={this.state.password} onChange={this.handleChange} placeholder="password"/>
+          <input name='password' type="password" value={this.state.password} onChange={this.handleChange} onSubmit={this.handleSubmit} placeholder="password"/>
         <br/>
         <input type="submit" value="Sign Up"/>
         <br/>
