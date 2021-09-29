@@ -32,7 +32,8 @@ render(){
       <br/>
         <input name='password' type="password" value={this.state.password} onChange={this.handleChange} placeholder="password"/>
       <br/>
-      <input type="submit" value="Sign Up"/>
+      {this.props.error ? <p>{this.props.error}</p> : null }
+      <input type="submit" value="Login"/>
       <br/>
       </form>
 
