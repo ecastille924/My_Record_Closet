@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import '../App.css'
-import Router from "./Router"
+// import Router from "./Router"
 import Header from "./Header"
 import Signup from "./Signup"
+import Login from "./Login"
+import RecordsContainer from "./RecordsContainer"
 
 class App extends Component {
   state = { 
@@ -32,9 +34,15 @@ class App extends Component {
         <div className="app">
             <Header />
 
-            {this.state.user.username ? <Router/> : 
-            <Signup signUp = {this.signUp} /> }
+            {this.state.user.username ? <RecordsContainer/> : (
+                <>
+                <Login/>
+                <Signup signUp = {this.signUp} /> 
+                </>
+            )
+            }
             
+
             {/* <Router /> */}
         </div>
       );
