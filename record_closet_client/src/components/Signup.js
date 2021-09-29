@@ -1,38 +1,29 @@
 import React, { Component } from 'react'
 import "../App.css"
-// import axios from 'axios'
 
-class Signup extends Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
-      username: "",
-      password:"",
-      password_confirmation:"",
-      errors: ""
+export default class Signup extends Component {
+ 
+    state = {
+      username: '',
+      password: '',
+      
     }
 
-  }
-  handleChange(e){
-    const { name, value } = e.target
-    this.setState({ [name]: value })
-  }
-  handleSubmit(e){
-    e.preventDefault()
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
   }
 
   render(){
-    const { username, password, password_confirmation } = this.state
     return (
       <div>
-        Log In:
-        <form className= "signup-form" onSubmit= {this.handleSubmit}>
-          <input type="text" value={username} onChange={this.handleChange} placeholder="username"/>
+        Sign Up:
+        <form className= "signup-form">
+          <input name='username' type="text" value={this.state.username} onChange={this.handleChange} placeholder="username"/>
         <br/>
-          <input type="password" value={password} onChange={this.handleChange} placeholder="password"/>
+          <input name='password' type="password" value={this.state.password} onChange={this.handleChange} placeholder="password"/>
         <br/>
-            <input type="password" value={password_confirmation} onChange={this.handleChange} placeholder="password_confirmation"/>
         <input type="submit" value="Sign Up"/>
         <br/>
         </form>
@@ -41,5 +32,3 @@ class Signup extends Component {
     );
   }
 }
-
-export default Signup

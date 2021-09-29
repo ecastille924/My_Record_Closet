@@ -6,7 +6,8 @@ function Navbar() {
     return (
         <div>
             <section className="navbar">
-                <a href="/" className="navbar-link">Login/Sign Up</a>
+            <a href="/signup" className="navbar-link">Sign Up</a>
+                <a href="/" className="navbar-link">Login</a>
                 <a href="/about" className="navbar-link">About</a>
                 <a href="/records" className="navbar-link">Records</a>
             </section>
