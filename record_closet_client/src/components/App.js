@@ -2,17 +2,18 @@ import React, { Component } from "react"
 import '../App.css'
 import Router from "./Router"
 import Header from "./Header"
+import Signup from "./Signup"
 
 class App extends Component {
   state = { 
       user: {}
     }
 
-  signUp = (user) => {
+  signUp = user => {
     fetch('http://localhost:3000/users',{
       method: "POST",
       headers: {
-        "Accept": "application.json",
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -23,14 +24,18 @@ class App extends Component {
       })
     })
     .then(response => response.json())
-    .then(user => this.setState({ user }))
+    .then(user => this.setState({ user: user }))
   }
 
   render() {
       return (
         <div className="app">
             <Header />
-            <Router />
+
+            {this.state.user.username ? <Router/> : 
+            <Signup signUp = {this.signUp} /> }
+            
+            {/* <Router /> */}
         </div>
       );
     }
